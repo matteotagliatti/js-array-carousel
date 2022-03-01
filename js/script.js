@@ -47,8 +47,7 @@ for (let i = 1; i < items.length; i++) {
 }
 
 /* Thumbnails */
-const thumbnailsElements = document.querySelectorAll("#thumbnails > div");
-const ThumbnailsOverlay = document.querySelectorAll(
+const thumbnailsOverlay = document.querySelectorAll(
   "#thumbnails > div > div.absolute"
 );
 
@@ -57,22 +56,22 @@ let activeItem = 0;
 
 downButton.addEventListener("click", function () {
   carouselElements[activeItem].classList.add("hidden");
-  ThumbnailsOverlay[activeItem].classList.remove("hidden");
+  thumbnailsOverlay[activeItem].classList.remove("hidden");
   activeItem++;
   if (activeItem === 5) {
     activeItem = 0;
   }
   carouselElements[activeItem].classList.remove("hidden");
-  ThumbnailsOverlay[activeItem].classList.add("hidden");
+  thumbnailsOverlay[activeItem].classList.add("hidden");
 });
 
 upButton.addEventListener("click", function () {
   carouselElements[activeItem].classList.add("hidden");
-  ThumbnailsOverlay[activeItem].classList.remove("hidden");
+  thumbnailsOverlay[activeItem].classList.remove("hidden");
   activeItem--;
   if (activeItem === -1) {
     activeItem = 4;
   }
   carouselElements[activeItem].classList.remove("hidden");
-  ThumbnailsOverlay[activeItem].classList.add("hidden");
+  thumbnailsOverlay[activeItem].classList.add("hidden");
 });
