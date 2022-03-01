@@ -13,8 +13,6 @@
       src="https://kit.fontawesome.com/0548baee83.js"
       crossorigin="anonymous"
     ></script>
-
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
   </head>
   <body>
     <main class="min-h-screen flex justify-center items-center">
@@ -27,31 +25,49 @@
           <!-- Upper button -->
           <div
             id="up-button"
-            class="absolute w-8 h-8 top-2 mx-auto left-0 right-0 rounded-full py-1 bg-slate-50 flex justify-center items-center"
+            class="z-10 absolute w-8 h-8 top-2 mx-auto left-0 right-0 rounded-full py-1 bg-slate-50 flex justify-center items-center"
           >
             <i class="fa-solid fa-chevron-up"></i>
           </div>
           <!-- Down button -->
           <div
             id="down-button"
-            class="absolute w-8 h-8 bottom-2 mx-auto left-0 right-0 rounded-full py-1 bg-slate-50 flex justify-center items-center"
+            class="z-10 absolute w-8 h-8 bottom-2 mx-auto left-0 right-0 rounded-full py-1 bg-slate-50 flex justify-center items-center"
           >
             <i class="fa-solid fa-chevron-down"></i>
           </div>
-          <div class="h-1/5">
-            <img class="h-full w-full" src="img/01.jpg" alt="img" />
-          </div>
-          <div class="h-1/5">
-            <img class="h-full w-full" src="img/02.jpg" alt="img" />
-          </div>
-          <div class="h-1/5">
-            <img class="h-full w-full" src="img/03.jpg" alt="img" />
-          </div>
-          <div class="h-1/5">
-            <img class="h-full w-full" src="img/04.jpg" alt="img" />
-          </div>
-          <div class="h-1/5">
-            <img class="h-full w-full" src="img/05.jpg" alt="img" />
+          <!-- Thumbnails -->
+          <div id="thumbnails">
+            <div class="relative h-1/5">
+              <div
+                class="hidden absolute bottom-0 top-0 right-0 left-0 bg-black opacity-50"
+              ></div>
+              <img class="h-full w-full" src="img/01.jpg" alt="img" />
+            </div>
+            <div class="relative h-1/5">
+              <div
+                class="absolute bottom-0 top-0 right-0 left-0 bg-black opacity-50"
+              ></div>
+              <img class="h-full w-full" src="img/02.jpg" alt="img" />
+            </div>
+            <div class="relative h-1/5">
+              <div
+                class="absolute bottom-0 top-0 right-0 left-0 bg-black opacity-50"
+              ></div>
+              <img class="h-full w-full" src="img/03.jpg" alt="img" />
+            </div>
+            <div class="relative h-1/5">
+              <div
+                class="absolute bottom-0 top-0 right-0 left-0 bg-black opacity-50"
+              ></div>
+              <img class="h-full w-full" src="img/04.jpg" alt="img" />
+            </div>
+            <div class="relative h-1/5">
+              <div
+                class="absolute bottom-0 top-0 right-0 left-0 bg-black opacity-50"
+              ></div>
+              <img class="h-full w-full" src="img/05.jpg" alt="img" />
+            </div>
           </div>
         </div>
       </div>

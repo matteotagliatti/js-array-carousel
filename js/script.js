@@ -25,7 +25,11 @@ let carouselContent = "";
 
 for (let i = 0; i < items.length; i++) {
   carouselContent += `
-    <div class="w-full h-full">
+    <div class="relative w-full h-full">
+        <div class="absolute right-0 bottom-0 text-white p-8 text-right">
+            <h1 class="text-xl font-semibold ">${title[i]}</h1>
+            <p>${text[i]}</p>
+        </div>
         <img
             class="w-full h-full object-cover"
             src="${items[i]}"
@@ -37,28 +41,38 @@ for (let i = 0; i < items.length; i++) {
 carousel.innerHTML += carouselContent;
 
 /* Add .hidden class to every other img tag */
-const carouselElements = document.querySelectorAll("#carousel-elements div");
+const carouselElements = document.querySelectorAll("#carousel-elements > div");
 for (let i = 1; i < items.length; i++) {
   carouselElements[i].classList.add("hidden");
 }
+
+/* Thumbnails */
+const thumbnailsElements = document.querySelectorAll("#thumbnails > div");
+const ThumbnailsOverlay = document.querySelectorAll(
+  "#thumbnails > div > div.absolute"
+);
 
 /* Buttons */
 let activeItem = 0;
 
 downButton.addEventListener("click", function () {
   carouselElements[activeItem].classList.add("hidden");
+  ThumbnailsOverlay[activeItem].classList.remove("hidden");
   activeItem++;
   if (activeItem === 5) {
     activeItem = 0;
   }
   carouselElements[activeItem].classList.remove("hidden");
+  ThumbnailsOverlay[activeItem].classList.add("hidden");
 });
 
 upButton.addEventListener("click", function () {
   carouselElements[activeItem].classList.add("hidden");
+  ThumbnailsOverlay[activeItem].classList.remove("hidden");
   activeItem--;
   if (activeItem === -1) {
     activeItem = 4;
   }
   carouselElements[activeItem].classList.remove("hidden");
+  ThumbnailsOverlay[activeItem].classList.add("hidden");
 });
