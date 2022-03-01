@@ -25,17 +25,19 @@ let carouselContent = "";
 
 for (let i = 0; i < items.length; i++) {
   carouselContent += `
-    <img
-        class=" w-full h-full object-cover"
-        src="${items[i]}"
-        alt="img"
-    />`;
+    <div class="w-full h-full">
+        <img
+            class="w-full h-full object-cover"
+            src="${items[i]}"
+            alt="img"
+        />
+    </div>`;
 }
 
 carousel.innerHTML += carouselContent;
 
 /* Add .hidden class to every other img tag */
-const carouselElements = document.querySelectorAll("#carousel-elements img");
+const carouselElements = document.querySelectorAll("#carousel-elements div");
 for (let i = 1; i < items.length; i++) {
   carouselElements[i].classList.add("hidden");
 }
