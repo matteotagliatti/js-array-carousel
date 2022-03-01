@@ -15,3 +15,18 @@ const text = [
   "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,",
   "Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,",
 ];
+
+const carouselElements = document.querySelectorAll("#carousel-elements img");
+const upButton = document.getElementById("up-button");
+const downButton = document.getElementById("down-button");
+
+let activeItem = 0;
+
+downButton.addEventListener("click", function () {
+  carouselElements[activeItem].classList.add("hidden");
+  activeItem++;
+  if (activeItem === 5) {
+    activeItem = 0;
+  }
+  carouselElements[activeItem].classList.remove("hidden");
+});
