@@ -21,40 +21,64 @@
       <!-- Carousel -->
       <div class="flex w-3/4 h-3/6">
         <!-- Left -->
-        <div class="w-full h-96 overflow-hidden">
-          <img class="w-full h-full object-cover" src="img/02.jpg" alt="img" />
+        <div id="carousel-elements" class="w-full h-96 overflow-hidden">
+          <img class="w-full h-full object-cover" src="img/01.jpg" alt="img" />
+          <img
+            class="hidden w-full h-full object-cover"
+            src="img/02.jpg"
+            alt="img"
+          />
+          <img
+            class="hidden w-full h-full object-cover"
+            src="img/03.jpg"
+            alt="img"
+          />
+          <img
+            class="hidden w-full h-full object-cover"
+            src="img/04.jpg"
+            alt="img"
+          />
+          <img
+            class="hidden w-full h-full object-cover"
+            src="img/05.jpg"
+            alt="img"
+          />
         </div>
         <!-- Right -->
         <div class="relative w-2/12 h-96 flex flex-col overflow-hidden">
           <!-- Upper button -->
           <div
+            id="up-button"
             class="absolute w-8 h-8 top-2 mx-auto left-0 right-0 rounded-full py-1 bg-slate-50 flex justify-center items-center"
           >
             <i class="fa-solid fa-chevron-up"></i>
           </div>
           <!-- Down button -->
           <div
+            id="down-button"
             class="absolute w-8 h-8 bottom-2 mx-auto left-0 right-0 rounded-full py-1 bg-slate-50 flex justify-center items-center"
           >
-            <i class="fa-solid fa-chevron-up"></i>
+            <i class="fa-solid fa-chevron-down"></i>
           </div>
           <div class="h-1/5">
-            <img src="img/01.jpg" alt="img" />
+            <img class="h-full w-full" src="img/01.jpg" alt="img" />
           </div>
           <div class="h-1/5">
-            <img src="img/01.jpg" alt="img" />
+            <img class="h-full w-full" src="img/02.jpg" alt="img" />
           </div>
           <div class="h-1/5">
-            <img src="img/01.jpg" alt="img" />
+            <img class="h-full w-full" src="img/03.jpg" alt="img" />
           </div>
           <div class="h-1/5">
-            <img src="img/01.jpg" alt="img" />
+            <img class="h-full w-full" src="img/04.jpg" alt="img" />
           </div>
           <div class="h-1/5">
-            <img src="img/01.jpg" alt="img" />
+            <img class="h-full w-full" src="img/05.jpg" alt="img" />
           </div>
         </div>
       </div>
     </main>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
