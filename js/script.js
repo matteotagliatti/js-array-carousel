@@ -30,3 +30,12 @@ downButton.addEventListener("click", function () {
   }
   carouselElements[activeItem].classList.remove("hidden");
 });
+
+upButton.addEventListener("click", function () {
+  carouselElements[activeItem].classList.add("hidden");
+  activeItem--;
+  if (activeItem === -1) {
+    activeItem = 4;
+  }
+  carouselElements[activeItem].classList.remove("hidden");
+});
