@@ -16,10 +16,31 @@ const text = [
   "Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,",
 ];
 
-const carouselElements = document.querySelectorAll("#carousel-elements img");
+const carousel = document.getElementById("carousel-elements");
 const upButton = document.getElementById("up-button");
 const downButton = document.getElementById("down-button");
 
+/* Generate Carousel */
+let carouselContent = "";
+
+for (let i = 0; i < items.length; i++) {
+  carouselContent += `
+    <img
+        class=" w-full h-full object-cover"
+        src="${items[i]}"
+        alt="img"
+    />`;
+}
+
+carousel.innerHTML += carouselContent;
+
+/* Add .hidden class to every other img tag */
+const carouselElements = document.querySelectorAll("#carousel-elements img");
+for (let i = 1; i < items.length; i++) {
+  carouselElements[i].classList.add("hidden");
+}
+
+/* Buttons */
 let activeItem = 0;
 
 downButton.addEventListener("click", function () {
