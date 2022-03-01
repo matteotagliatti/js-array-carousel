@@ -75,3 +75,18 @@ upButton.addEventListener("click", function () {
   carouselElements[activeItem].classList.remove("hidden");
   thumbnailsOverlay[activeItem].classList.add("hidden");
 });
+
+/* 
+EXTRA: click on thumnails img
+*/
+const thumbnailsImg = document.querySelectorAll("#thumbnails > div");
+
+for (let i = 0; i < thumbnailsImg.length; i++) {
+  thumbnailsImg[i].addEventListener("click", function () {
+    carouselElements[activeItem].classList.add("hidden");
+    thumbnailsOverlay[activeItem].classList.remove("hidden");
+    activeItem = i;
+    carouselElements[activeItem].classList.remove("hidden");
+    thumbnailsOverlay[activeItem].classList.add("hidden");
+  });
+}
