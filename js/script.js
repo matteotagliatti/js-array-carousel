@@ -1,5 +1,4 @@
 /* Data */
-
 const items = [
   "img/01.jpg",
   "img/02.jpg",
@@ -19,7 +18,6 @@ const text = [
 ];
 
 /* Start DOM Elements */
-
 const carousel = document.getElementById("carousel-elements");
 const thumbnails = document.getElementById("thumbnails");
 const upButton = document.getElementById("up-button");
