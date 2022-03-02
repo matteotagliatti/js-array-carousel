@@ -21,11 +21,13 @@ const text = [
 /* Start DOM Elements */
 
 const carousel = document.getElementById("carousel-elements");
+const thumbnails = document.getElementById("thumbnails");
 const upButton = document.getElementById("up-button");
 const downButton = document.getElementById("down-button");
 
-/* Generate Carousel */
+/* Generate Carousel & Thumbnails*/
 let carouselContent = "";
+let thumbnailContent = "";
 
 for (let i = 0; i < items.length; i++) {
   carouselContent += `
@@ -37,23 +39,37 @@ for (let i = 0; i < items.length; i++) {
         <img
             class="w-full h-full object-cover"
             src="${items[i]}"
-            alt="img"
+            alt="${title[i]}"
         />
+    </div>`;
+
+  thumbnailContent += `
+    <div class="cursor-pointer relative h-[4.8rem]">
+      <div
+        class="hidden absolute bottom-0 top-0 right-0 left-0 bg-black opacity-50">
+      </div>
+      <img class="h-full w-full" src="${items[i]}" alt="${title[i]}" />
     </div>`;
 }
 
 carousel.innerHTML += carouselContent;
+thumbnails.innerHTML += thumbnailContent;
 
-/* Add .hidden class to every other img tag */
-const carouselElements = document.querySelectorAll("#carousel-elements > div");
-for (let i = 1; i < items.length; i++) {
-  carouselElements[i].classList.add("hidden");
-}
-
-/* Thumbnails */
+/* Thumbnails Overlay */
 const thumbnailsOverlay = document.querySelectorAll(
   "#thumbnails > div > div.absolute"
 );
+
+/* 
+  Add .hidden class to every img, exlcuding the first.
+  Remove .hidden class to every thumbnail, excluding the first.
+*/
+const carouselElements = document.querySelectorAll("#carousel-elements > div");
+
+for (let i = 1; i < items.length; i++) {
+  carouselElements[i].classList.add("hidden");
+  thumbnailsOverlay[i].classList.remove("hidden");
+}
 
 /* Buttons */
 let activeItem = 0;
